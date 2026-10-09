@@ -265,7 +265,7 @@ for titulo, archivo, carpeta in [
         show_outputs(carpeta)
 
 with st.expander("Emoción en la voz (resultado preliminar)"):
-    seccion_emocion.mostrar()
+    seccion_voz.mostrar()
     
 # Pie
 
