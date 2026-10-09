@@ -2,6 +2,7 @@ import base64
 from pathlib import Path
 import streamlit as st
 
+import seccion_voz
 ROOT = Path(__file__).parent
 VIDEO_URL = "https://www.youtube.com/watch?v=ex0WYnK_UDY"  # Video del prototipo (Anexo 6 de la tesina)
 
@@ -263,7 +264,9 @@ for titulo, archivo, carpeta in [
         st.markdown(read_md(archivo))
         show_outputs(carpeta)
 
-
+with st.expander("Emoción en la voz (resultado preliminar)"):
+    seccion_emocion.mostrar()
+    
 # Pie
 
 st.markdown(
