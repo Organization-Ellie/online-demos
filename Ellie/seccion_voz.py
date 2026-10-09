@@ -1,12 +1,13 @@
-""Sección 'Emoción en la voz' (código de Vicente, adaptado para integrarse a la página de Ellie).""
+#""Sección 'Emoción en la voz' (código de Vicente, adaptado para integrarse a la página de Ellie).""
 from pathlib import Path
-
 import altair as alt
 import pandas as pd
 import streamlit as st
 
 # Este archivo vive en Ellie/, y los datos en emocion-voz
-DATOS = Path(__file__).resolve().parent.parent / "emocion-voz" / "data"
+AQUI = Path(__file__).resolve().parent
+_CANDIDATOS = [AQUI.parent / "emocion-voz" / "data", AQUI / "data"]
+DATOS = next((p for p in _CANDIDATOS if p.exists()), _CANDIDATOS[0])
 
 ES = {"alegria": "alegría"}
 EMOCIONES = ["neutral", "alegria", "tristeza", "enojo", "miedo", "asco", "sorpresa", "otra", "desconocida"]
