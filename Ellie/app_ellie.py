@@ -255,15 +255,15 @@ st.markdown('<section class="sec" id="equipo"><h2>Avances del equipo</h2>'
            # "en <code>output/</code>.</p></section>"
             , unsafe_allow_html=True)
 
-for titulo, archivo, carpeta in [
-    ("Avatar", "avatar.md", "avatar"),
-    ("Voz", "voz.md", "voz"),
-    ("Conversación, recordatorios y ánimo", "motor.md", "motor"),
-]:
-    with st.expander(titulo):
-        st.markdown(read_md(archivo))
-        show_outputs(carpeta)
-with st.expander("Cómo se mueve el rostro del avatar"):
+#for titulo, archivo, carpeta in [
+    #("Avatar", "avatar.md", "avatar"),
+    #("Voz", "voz.md", "voz"),
+    #("Conversación, recordatorios y ánimo", "motor.md", "motor"),
+#]:
+#    with st.expander(titulo):
+#        st.markdown(read_md(archivo))
+#        show_outputs(carpeta)
+with st.expander("Cómo se activa el rostro del avatar (muestra preliminar)"):
     st.markdown(
         "Para que el avatar se sienta vivo, el sistema sigue puntos de referencia del rostro, "
         "como los ojos, las cejas y la boca, y los usa para animar la expresión mientras habla."
