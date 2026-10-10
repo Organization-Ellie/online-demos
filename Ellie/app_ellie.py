@@ -263,7 +263,23 @@ for titulo, archivo, carpeta in [
     with st.expander(titulo):
         st.markdown(read_md(archivo))
         show_outputs(carpeta)
-
+with st.expander("Cómo se mueve el rostro del avatar"):
+    st.markdown(
+        "Para que el avatar se sienta vivo, el sistema sigue puntos de referencia del rostro, "
+        "como los ojos, las cejas y la boca, y los usa para animar la expresión mientras habla."
+    )
+    c1, c2 = st.columns(2, gap="large")
+    for col, nombre, pie in [
+        (c1, "mod2.png", "Puntos de referencia detectados en el rostro."),
+        (c2, "mod4.png", "El avatar usa esos puntos para mover la boca y la expresión."),
+    ]:
+        ruta = ROOT / "assets" / nombre
+        with col:
+            if ruta.exists():
+                st.image(str(ruta), caption=pie)
+            else:
+                st.info(f"Falta la imagen assets/{nombre}")
+                
 with st.expander("Emoción en la voz (resultado preliminar)"):
     seccion_voz.mostrar()
     
